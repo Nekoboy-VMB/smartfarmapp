@@ -23,4 +23,4 @@ BLE provisioning dùng Web Bluetooth, hiện hỗ trợ tốt trên Chrome Andro
 
 Thiết bị hiện dùng HiveMQ public: MQTT TCP 1883 cho ESP và WSS 8884 cho webapp. Đây là broker công cộng không xác thực/ủy quyền; topic theo Device ID không phải biện pháp bảo mật. Chỉ dùng trong giai đoạn thử nghiệm và không chia sẻ topic. Muốn điều khiển từ xa an toàn, cần chuyển cả ESP và webapp sang broker riêng có tài khoản, TLS và quyền truy cập theo thiết bị.
 
-Webapp lưu lịch/cấu hình giao diện trong bộ nhớ trình duyệt trên từng thiết bị. Xuất JSON từ máy đã cấu hình, rồi nhập file đó trên điện thoại để mang lịch sang.
+Lịch được lưu trên ESP32 và đồng bộ sang máy tính/điện thoại khi webapp kết nối bằng BLE hoặc MQTT. Nếu lịch đang lưu trong trình duyệt khác với ESP32, webapp sẽ hỏi bạn muốn tải danh sách từ ESP xuống hay giữ danh sách trên trình duyệt và gửi lên ESP. Các tùy chọn giao diện vẫn được lưu riêng trong từng trình duyệt.

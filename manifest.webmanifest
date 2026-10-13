@@ -1,0 +1,21 @@
+{
+  "id": "./",
+  "name": "Vườn nhà — Điều khiển tưới",
+  "short_name": "Vườn nhà",
+  "description": "Điều khiển và theo dõi bộ tưới ESP32-S3 qua MQTT hoặc BLE.",
+  "lang": "vi",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#f4f7f5",
+  "theme_color": "#176b4b",
+  "icons": [
+    {
+      "src": "./icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

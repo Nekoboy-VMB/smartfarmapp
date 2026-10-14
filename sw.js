@@ -1,4 +1,4 @@
-const CACHE = 'vuon-nha-pwa-v4';
+const CACHE = 'vuon-nha-pwa-v5';
 const APP_FILES = ['./', './index.html', './manifest.webmanifest', './icon.svg'];
 
 self.addEventListener('install', event => {

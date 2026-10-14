@@ -26,3 +26,8 @@ Thiết bị hiện dùng HiveMQ public: MQTT TCP 1883 cho ESP và WSS 8884 cho 
 Lịch được lưu trên ESP32 và đồng bộ sang máy tính/điện thoại khi webapp kết nối bằng BLE hoặc MQTT. Nếu lịch đang lưu trong trình duyệt khác với ESP32, webapp sẽ hỏi bạn muốn tải danh sách từ ESP xuống hay giữ danh sách trên trình duyệt và gửi lên ESP. Các tùy chọn giao diện vẫn được lưu riêng trong từng trình duyệt.
 
 Danh sách tối đa 8 mạng Wi-Fi được lưu trên ESP32 nên dùng chung giữa các điện thoại. Chọn SSID đã lưu để kết nối lại mà không nhập mật khẩu; có thể chọn mạng qua MQTT hoặc BLE. Thêm/cập nhật mạng mới cần BLE để mật khẩu không bị gửi qua broker MQTT công cộng. Trạng thái chỉ đồng bộ tên mạng, không tiết lộ mật khẩu.
+
+
+## Dừng khẩn cấp và lịch sử phiên tưới
+
+Tab Thiết bị có nút Dừng khẩn cấp gửi lệnh `emergencyStop` qua BLE hoặc MQTT: hủy các chuỗi lịch đang chạy, tắt bơm trước rồi đóng van theo độ trễ an toàn 100 ms. Firmware lưu 15 phiên gần nhất vào NVS; mỗi phiên có thời điểm bắt đầu/kết thúc, thời lượng thực tế, nguồn thủ công/lịch tự động và lý do kết thúc. Nếu ESP khởi động lại khi phiên còn mở, firmware ghi nhận phiên bị gián đoạn. Webapp hiển thị cảnh báo khi mất Internet, mất heartbeat MQTT hoặc ESP không online; cảnh báo chỉ cập nhật khi trang web đang chạy.
